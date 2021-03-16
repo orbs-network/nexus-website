@@ -26,6 +26,8 @@ html, body {
   align-items: center;
   justify-content: center;
   height: 100%;
+  z-index: 2;
+  position: relative;
 }
 
 .logo {
@@ -43,6 +45,17 @@ html, body {
   margin: 0 auto;
 }
 
+.rocket-container {
+  position: fixed;
+  top: 26vh;
+  right: -70px;
+  z-index: 1;
+}
+
+#js-rocket svg {
+  height: 80vh;
+}
+
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 100px;
@@ -57,4 +70,120 @@ h5 {
   color: white;
   font-weight: 200;
   margin: 0;
+}
+
+@media (max-width: 700px) {
+  .rocket-container {
+    filter: brightness(15%) contrast(90%);
+  }
+}
+
+.rocket-container {
+  will-change: transform;
+  animation: moveUp 300s;
+}
+
+#particles {
+  animation: moveDown 100s;
+}
+
+#particles ellipse {
+  will-change: transform;
+  animation: vibrate 2s infinite;
+}
+
+#js-rocket #flame {
+  will-change: transform;
+  animation: flicker .1s infinite;
+}
+
+#js-rocket #speed rect {
+  will-change: transform;
+}
+
+#js-rocket #speed rect:first-of-type {
+
+  animation: translateSpeed 9s infinite;
+  animation-delay: 5s;
+}
+
+#js-rocket #speed rect:nth-child(2) {
+  animation: translateSpeed infinite;
+  animation-duration: 9s;
+}
+
+#js-rocket #speed rect:nth-child(3) {
+
+  animation: translateSpeed infinite;
+  animation-delay: 6s;
+  animation-duration: 9s;
+}
+
+#js-rocket #speed rect:nth-child(4) {
+  animation: translateSpeed infinite;
+  animation-duration: 7s;
+  animation-delay: 5s;
+}
+
+#js-rocket #speed rect:nth-child(5) {
+
+  animation: translateSpeed infinite;
+  animation-duration: 6s;
+  animation-delay: 5s;
+}
+
+@keyframes vibrate {
+  0% {
+      transform: translateX(-0.5%);
+  }
+
+  50% {
+      transform: translateX(0%);
+  }
+
+  100% {
+      transform: translateX(-0.5%);
+  }
+}
+
+@keyframes flicker {
+  0% {
+      opacity: 1;
+  }
+
+  100% {
+      opacity: 0.8;
+  }
+}
+
+@keyframes translateSpeed {
+  0% {
+      transform: translateY(-100%);
+      opacity: 1;
+  }
+
+  100% {
+      transform: translateY(200%);
+      opacity: 0;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+      transform: translateY(0%);
+  }
+
+  100% {
+      transform: translateY(-200%);
+  }
+}
+
+@keyframes moveDown {
+  0% {
+      transform: translateY(30%);
+  }
+
+  100% {
+      transform: translateY(200%);
+  }
 }
