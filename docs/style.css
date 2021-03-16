@@ -102,31 +102,33 @@ h5 {
 }
 
 #js-rocket #speed rect:first-of-type {
-
+  opacity: 0;
   animation: translateSpeed 9s infinite;
   animation-delay: 5s;
 }
 
 #js-rocket #speed rect:nth-child(2) {
+  opacity: 0;
   animation: translateSpeed infinite;
   animation-duration: 9s;
 }
 
 #js-rocket #speed rect:nth-child(3) {
-
+  opacity: 0;
   animation: translateSpeed infinite;
   animation-delay: 6s;
   animation-duration: 9s;
 }
 
 #js-rocket #speed rect:nth-child(4) {
+  opacity: 0;
   animation: translateSpeed infinite;
   animation-duration: 7s;
   animation-delay: 5s;
 }
 
 #js-rocket #speed rect:nth-child(5) {
-
+  opacity: 0;
   animation: translateSpeed infinite;
   animation-duration: 6s;
   animation-delay: 5s;
