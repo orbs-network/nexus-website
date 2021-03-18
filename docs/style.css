@@ -45,6 +45,22 @@ html, body {
   margin: 0 auto;
 }
 
+.hint-off {
+  display: inline;
+}
+
+.hint-parent:hover .hint-off {
+  display: none;
+}
+
+.hint-on {
+  display: none;
+}
+
+.hint-parent:hover .hint-on {
+  display: inline;
+}
+
 .rocket-container {
   position: fixed;
   top: 26vh;
